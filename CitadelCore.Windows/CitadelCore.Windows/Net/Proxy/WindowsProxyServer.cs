@@ -29,6 +29,12 @@ namespace CitadelCore.Windows.Net.Proxy
         {
         }
 
+        public WindowsProxyServer(FirewallCheckCallback firewallCallback, MessageBeginCallback messageBeginCallback, MessageEndCallback messageEndCallback, BadCertificateCallback badCertificateCallback)
+            : base(firewallCallback, messageBeginCallback, messageEndCallback, badCertificateCallback)
+        {
+
+        }
+
         protected override IDiverter CreateDiverter(IPEndPoint ipv4HttpEp, IPEndPoint ipv4HttpsEp, IPEndPoint ipv6HttpEp, IPEndPoint ipv6HttpsEp)
         {
             return new WindowsDiverter((ushort)ipv4HttpEp.Port, (ushort)ipv4HttpsEp.Port, (ushort)ipv6HttpEp.Port, (ushort)ipv6HttpsEp.Port);
