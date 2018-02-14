@@ -1,2 +1,2 @@
-# CitadelCore.Windows
-CitadelCore platform specific implementation for Windows
+# FilterCore.Windows
+FilterCore platform specific implementation for Windows
