@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
+using System;
 using CitadelCore.Diversion;
 using CitadelCore.Net.Proxy;
 using CitadelCore.Windows.Diversion;
@@ -25,10 +25,17 @@ namespace CitadelCore.Windows.Net.Proxy
 {
     public class WindowsProxyServer : ProxyServer
     {
+        public WindowsProxyServer(ProxyOptions options) : base(options)
+        {
+
+        }
+
+        [Obsolete("Use WindowsProxyServer(ProxyOptions) instead.")]
         public WindowsProxyServer(FirewallCheckCallback firewallCallback, MessageBeginCallback messageBeginCallback, MessageEndCallback messageEndCallback) : base(firewallCallback, messageBeginCallback, messageEndCallback)
         {
         }
 
+        [Obsolete("Use WindowsProxyServer(ProxyOptions) instead.")]
         public WindowsProxyServer(FirewallCheckCallback firewallCallback, MessageBeginCallback messageBeginCallback, MessageEndCallback messageEndCallback, BadCertificateCallback badCertificateCallback)
             : base(firewallCallback, messageBeginCallback, messageEndCallback, badCertificateCallback)
         {
