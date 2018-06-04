@@ -318,6 +318,11 @@ namespace CitadelCore.Windows.Diversion
                                     {
                                         var procPath = m_v4portInfo[tcpHeader->SrcPort] == null ? string.Empty : m_v4portInfo[tcpHeader->SrcPort].OwnerProcessPath;
 
+                                        if(tcpHeader->DstPort == 4022 || tcpHeader->DstPort == 4020) // Adding temporary exemptions for 64-bit debugger.
+                                        {
+                                            Volatile.Write(ref m_v4ShouldFilter[tcpHeader->SrcPort], false);
+                                        }
+                                        else
                                         if(procPath.Length <= 0)
                                         {
                                             // This is something we couldn't get a handle on. Since
