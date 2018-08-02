@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2.0.2</Version>
+    <Version>2.1.1</Version>
     <Authors>Jesse Nicholson</Authors>
     <Company>CloudVeil Technology, Inc.</Company>
     <Description>Transparent filtering proxy engine for Windows. Forked from https://github.com/TechnikEmpire/CitadelCore.Windows</Description>
@@ -10,11 +10,11 @@
     <PackageLicenseUrl>https://www.gnu.org/licenses/lgpl-3.0.en.html</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/cloudveiltech/CitadelCore.Windows</PackageProjectUrl>
     <RepositoryUrl>https://github.com/cloudveiltech/CitadelCore.Windows</RepositoryUrl>
-    <PackageReleaseNotes>Update CitadelCore to 2.0.2. New certificate exemptions API is available.</PackageReleaseNotes>
+    <PackageReleaseNotes>Update CitadelCore to 2.1.1</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>2.0.2.0</AssemblyVersion>
-    <FileVersion>2.0.2.0</FileVersion>
+    <AssemblyVersion>2.1.1.0</AssemblyVersion>
+    <FileVersion>2.1.1.0</FileVersion>
     <PackageId>CloudVeil.CitadelCore.Windows</PackageId>
   </PropertyGroup>
 
@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CloudVeil.CitadelCore" Version="2.0.2" />
+    <PackageReference Include="CloudVeil.CitadelCore" Version="2.1.1" />
   </ItemGroup>
 
   <Target Name="CollectRuntimeOutputs" BeforeTargets="_GetPackageFiles">
