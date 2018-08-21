@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$authors$</authors>
+    <licenseUrl>https://www.gnu.org/licenses/lgpl-3.0.en.html</licenseUrl>
+    <projectUrl>https://github.com/cloudveiltech/FilterCore.Windows</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>$releaseNotes$</releaseNotes>
+    <copyright>Copyright 2018 Jesse Nicholson</copyright>
+    <contentFiles>
+      <files include="libraries/**/*.dll" buildAction="None" copyToOutput="true" />
+      <files include="libraries/**/*.sys" buildAction="None" copyToOutput="true" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="Lib\WinDivert\**" target="contentFiles\libraries" />
+    <file src="bin\Release\netstandard2.0\CitadelCore.Windows.dll" target="lib\netstandard2.0" />
+    <file src="bin\Release\netstandard2.0\CitadelCore.dll" target="lib\netstandard2.0" />
+  </files>
+</package>
