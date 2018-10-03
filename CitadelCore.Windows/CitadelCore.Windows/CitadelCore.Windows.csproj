@@ -1,9 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <NuspecFile>$(MSBuildThisFileDirectory)$(MSBuildProjectName).nuspec</NuspecFile>
-    <Version>2.1.3</Version>
+    <Version>2.1.4</Version>
     <Authors>Jesse Nicholson</Authors>
     <Company>CloudVeil Technology, Inc.</Company>
     <Description>Transparent filtering proxy engine for Windows. Forked from https://github.com/TechnikEmpire/CitadelCore.Windows</Description>
@@ -11,34 +10,29 @@
     <PackageLicenseUrl>https://www.gnu.org/licenses/lgpl-3.0.en.html</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/cloudveiltech/CitadelCore.Windows</PackageProjectUrl>
     <RepositoryUrl>https://github.com/cloudveiltech/CitadelCore.Windows</RepositoryUrl>
-    <PackageReleaseNotes>Working on nuspec file to bundle external resources properly.</PackageReleaseNotes>
+    <PackageReleaseNotes>Fixed slow network share speed on gigabit networks by whitelisting port in filter string.</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <AssemblyVersion>2.1.3.0</AssemblyVersion>
-    <FileVersion>2.1.3.0</FileVersion>
+    <AssemblyVersion>2.1.4.0</AssemblyVersion>
+    <FileVersion>2.1.4.0</FileVersion>
     <PackageId>CloudVeil.CitadelCore.Windows</PackageId>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <ItemGroup Label="dotnet pack instructions">
     <Content Include="build\*.targets">
       <Pack>true</Pack>
       <PackagePath>build\</PackagePath>
     </Content>
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="CloudVeil.CitadelCore" Version="2.1.1" />
     <PackageReference Include="NuGet.Build.Tasks.Pack" Version="4.8.0" />
   </ItemGroup>
-
   <Target Name="CollectRuntimeOutputs" BeforeTargets="_GetPackageFiles">
     <!-- Collect these items inside a target that runs after build but before packaging. -->
     <ItemGroup>
@@ -47,14 +41,12 @@
         <PackagePath>build\x86\</PackagePath>
       </Content>
     </ItemGroup>
-    
     <ItemGroup>
       <Content Include="$(OutputPath)\x64\*.dll;$(OutputPath)\x64\*.sys;">
         <Pack>true</Pack>
         <PackagePath>build\x64\</PackagePath>
       </Content>
     </ItemGroup>
-
     <ItemGroup>
       <Content Include="$(OutputPath)\*.pdb;">
         <Pack>true</Pack>
@@ -62,11 +54,9 @@
       </Content>
     </ItemGroup>
   </Target>
-
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="xcopy /E /Y /C &quot;$(ProjectDir)\Lib\WinDivert\x64\*.dll&quot; &quot;$(OutDir)\x64\&quot;&#xD;&#xA;xcopy /E /Y /C &quot;$(ProjectDir)\Lib\WinDivert\x64\*.sys&quot; &quot;$(OutDir)\x64\&quot;&#xD;&#xA;xcopy /E /Y /C &quot;$(ProjectDir)\Lib\WinDivert\x86\*.dll&quot; &quot;$(OutDir)\x86\&quot;&#xD;&#xA;xcopy /E /Y /C &quot;$(ProjectDir)\Lib\WinDivert\x86\*.sys&quot; &quot;$(OutDir)\x86\&quot;" />
   </Target>
-
   <Target Name="SetNuspecProperties" BeforeTargets="GenerateNuspec">
     <PropertyGroup>
       <NuspecProperties>id=$(PackageId)</NuspecProperties>

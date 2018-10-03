@@ -15,10 +15,11 @@
       <files include="libraries/**/*.dll" buildAction="None" copyToOutput="true" />
       <files include="libraries/**/*.sys" buildAction="None" copyToOutput="true" />
     </contentFiles>
+    <dependencies>
+      <dependency id="CloudVeil.CitadelCore.Windows" version="2.1.1" />
+    </dependencies>
   </metadata>
   <files>
     <file src="Lib\WinDivert\**" target="contentFiles\libraries" />
-    <file src="bin\Release\netstandard2.0\CitadelCore.Windows.dll" target="lib\netstandard2.0" />
-    <file src="bin\Release\netstandard2.0\CitadelCore.dll" target="lib\netstandard2.0" />
   </files>
 </package>
