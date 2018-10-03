@@ -16,7 +16,7 @@
       <files include="libraries/**/*.sys" buildAction="None" copyToOutput="true" />
     </contentFiles>
     <dependencies>
-      <dependency id="CloudVeil.CitadelCore.Windows" version="2.1.1" />
+      <dependency id="CloudVeil.CitadelCore" version="2.1.1" />
     </dependencies>
   </metadata>
   <files>
