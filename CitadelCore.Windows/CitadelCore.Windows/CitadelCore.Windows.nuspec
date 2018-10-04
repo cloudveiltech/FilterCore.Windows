@@ -21,5 +21,6 @@
   </metadata>
   <files>
     <file src="Lib\WinDivert\**" target="contentFiles\libraries" />
+    <file src="bin\Release\netstandard2.0\CitadelCore.Windows.dll" target="lib\netstandard2.0" />
   </files>
 </package>
