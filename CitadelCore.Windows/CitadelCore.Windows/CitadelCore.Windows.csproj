@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <NuspecFile>$(MSBuildThisFileDirectory)$(MSBuildProjectName).nuspec</NuspecFile>
-    <Version>2.1.6</Version>
+    <Version>2.1.7</Version>
     <Authors>Jesse Nicholson</Authors>
     <Company>CloudVeil Technology, Inc.</Company>
     <Description>Transparent filtering proxy engine for Windows. Forked from https://github.com/TechnikEmpire/CitadelCore.Windows</Description>
@@ -10,11 +10,11 @@
     <PackageLicenseUrl>https://www.gnu.org/licenses/lgpl-3.0.en.html</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/cloudveiltech/CitadelCore.Windows</PackageProjectUrl>
     <RepositoryUrl>https://github.com/cloudveiltech/CitadelCore.Windows</RepositoryUrl>
-    <PackageReleaseNotes>Fixed slow network share speed on gigabit networks. Third version because second missed CitadelCore.Windows.dll</PackageReleaseNotes>
+    <PackageReleaseNotes>Attempts to fix packaging issues</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <AssemblyVersion>2.1.6.0</AssemblyVersion>
-    <FileVersion>2.1.6.0</FileVersion>
+    <AssemblyVersion>2.1.7.0</AssemblyVersion>
+    <FileVersion>2.1.7.0</FileVersion>
     <PackageId>CloudVeil.CitadelCore.Windows</PackageId>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
